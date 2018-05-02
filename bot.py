@@ -18,9 +18,9 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith("**translate"):
-        s = message.content.split("**translate", 1)[1]
-        dict = str.maketrans("qwertyuiopasdfghjklzxcvbnm1234567890", "qʷᵉʳᵗʸᵘⁱᵒᵖᵃˢᵈᶠᵍʰʲᵏˡᶻˣᶜᵛᵇⁿᵐ¹²³⁴⁵⁶⁷⁸⁹⁰")
+    if message.content.upper().startswith("**TRANSLATE"):
+        s = message.content.split(" ", 1)[1]
+        dict = str.maketrans("qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM", "qʷᵉʳᵗʸᵘⁱᵒᵖᵃˢᵈᶠᵍʰʲᵏˡᶻˣᶜᵛᵇⁿᵐ¹²³⁴⁵⁶⁷⁸⁹⁰Qᵂᴱᴿᵀʸᵁᴵᴼᴾᴬˢᴰᶠᴳᴴᴶᴷᴸᶻˣᶜⱽᴮᴺᴹ")
         
         value= s
         result = value.translate(dict)
